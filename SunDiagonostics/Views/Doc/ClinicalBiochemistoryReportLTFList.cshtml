@@ -1,0 +1,177 @@
+﻿@model IEnumerable<SunDiagonostics.Models.ClinicalBiochemistoryReportLTFModel>
+
+@{
+    ViewBag.Title = "ClinicalBiochemistoryReportLTFList";
+}
+
+<h2>ClinicalBiochemistoryReportLTFList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportLTFid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doc_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Srno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RefByDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Specilization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.signature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descriptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.branchLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fullAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumBilirubin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumBilirubinD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumBilirubinID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumAsparateAminoTransferase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumAlanineAminoTransferase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumTotalProtein)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumAlbumin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumGlubulin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AGRation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumAlkalinePhosphatse)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportLTFid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doc_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Srno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RefByDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specilization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.signature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.branchLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumBilirubin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumBilirubinD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumBilirubinID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumAsparateAminoTransferase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumAlanineAminoTransferase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumTotalProtein)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumAlbumin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumGlubulin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AGRation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumAlkalinePhosphatse)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

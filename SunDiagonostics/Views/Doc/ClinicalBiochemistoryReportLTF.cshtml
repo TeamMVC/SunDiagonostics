@@ -1,0 +1,128 @@
+﻿@model SunDiagonostics.Models.ClinicalBiochemistoryReportLTFModel
+
+@{
+    ViewBag.Title = "ClinicalBiochemistoryReportLTF";
+}
+<div class="panel panel-default ">
+    <div class="panel-heading headingcolor">
+        <h3>Clinical    Biochemistory   Report </h3>
+        <h5><u>LFT</u></h5>
+    </div>
+</div>
+<div class="bottom-right">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <form class="form-inline">
+        <div class="form-group">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @*<div class="form-group">
+            @Html.LabelFor(model => model.ReportLTFid, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ReportLTFid, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReportLTFid, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+            @*<div div class="form-group-sm">
+            @Html.LabelFor(model => model.pid, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.pid, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pid, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+            <div div class="form-group">
+                @Html.LabelFor(model => model.serumBilirubin, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumBilirubin, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumBilirubin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.serumBilirubinD, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumBilirubinD, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumBilirubinD, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.serumBilirubinID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumBilirubinID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumBilirubinID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.serumTotalProtein, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumTotalProtein, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumTotalProtein, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.serumAlbumin, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumAlbumin, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumAlbumin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AGRation, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.AGRation, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AGRation, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.serumGlubulin, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumGlubulin, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumGlubulin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.serumAsparateAminoTransferase, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumAsparateAminoTransferase, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumAsparateAminoTransferase, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.serumAlanineAminoTransferase, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumAlanineAminoTransferase, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumAlanineAminoTransferase, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.serumAlkalinePhosphatse, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4" style="margin-bottom:2px">
+                    @Html.EditorFor(model => model.serumAlkalinePhosphatse, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.serumAlkalinePhosphatse, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+
+                <div class="col-md-offset-6 col-md-10" class="text-center" style="margin-top:10px">
+                    <input type="submit" class="btn btn-success" value="Create" />
+                </div>
+            </div>
+        </div>
+    </form>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

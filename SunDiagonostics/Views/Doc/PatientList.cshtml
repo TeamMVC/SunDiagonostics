@@ -1,0 +1,64 @@
+﻿@model List<SunDiagonostics.Models.PatientInfoModel>
+
+@{
+    ViewBag.Title = "PatientList";
+    Layout = null;
+}
+
+<h2>Patient List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>
+           SrNo.
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+           Patient Name
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Ref. By Doctor
+        </th>
+        <th>
+           Gender
+        </th>
+        <th> Action </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.srno
+        </td>
+        <td>
+            @item.date
+        </td>
+        <td>
+            @item.pname
+        </td>
+        <td>
+            @item.age
+        </td>
+        <td>
+            @item.RefByDoc
+        </td>
+        <td>
+            @item.gender
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

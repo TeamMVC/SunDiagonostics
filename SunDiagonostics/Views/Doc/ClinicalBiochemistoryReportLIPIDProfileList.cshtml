@@ -1,0 +1,165 @@
+﻿@model IEnumerable<SunDiagonostics.Models.ClinicalBiochemistoryReportLIPIDProfileModel>
+
+@{
+    ViewBag.Title = "ClinicalBiochemistoryReportLIPIDProfileList";
+}
+
+<h2>ClinicalBiochemistoryReportLIPIDProfileList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportLIPIDPid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doc_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Srno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RefByDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Specilization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.signature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descriptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.branchLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fullAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumCholestrol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hdlCholestrol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LDLCholestrol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VLDLCholestrol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serumTriglyceride)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THDL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LDLHDL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titalLipid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportLIPIDPid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doc_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Srno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RefByDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specilization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.signature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.branchLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumCholestrol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hdlCholestrol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LDLCholestrol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VLDLCholestrol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serumTriglyceride)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THDL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LDLHDL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titalLipid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

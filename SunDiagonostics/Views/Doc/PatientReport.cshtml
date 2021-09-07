@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SunDiagonostics.Models.PatientInfoModel>
+@{
+    ViewBag.Title = "PatientReport";
+}
+
+<h2>PatientReport</h2>
+<script>
+    function redirectTotestRegistration() {
+
+        window.location = "http://localhost:54429/Doc/Index";
+    }
+
+</script>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="button" value="Create New Test" class="btn btn-default" onclick="redirectTotestRegistration()" />
+    </div>
+</div>
+
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>
+            Patient Name
+        </th>
+        <th>
+            Mobile Number
+        </th>
+        <th>
+            Date
+        </th>
+        <th> Action </th>
+
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.pname
+                </td>
+                <td>
+                    @item.mobileNo
+                </td>
+                <td>
+                    @item.date
+                </td>
+
+                <td>
+                    @Html.ActionLink("View Reports", "GetAllReportsByPatientId", new { id = item.pid }) |
+                </td>
+            </tr>
+        }
+    }
+</table>

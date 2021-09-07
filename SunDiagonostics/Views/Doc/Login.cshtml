@@ -1,0 +1,181 @@
+﻿@model SunDiagonostics.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+
+}
+
+@*<h2>Login</h2>*@
+<style>
+
+    /* style the container */
+    /*   .container {
+        position: relative;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px 0 30px 0;
+    }*/
+
+    /* style inputs and link buttons */
+    input,
+    .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        margin: 5px 0;
+        opacity: 0.85;
+        display: inline-block;
+        font-size: 17px;
+        line-height: 20px;
+        text-decoration: none; /* remove underline from anchors */
+    }
+
+        input:hover,
+        .btn:hover {
+            opacity: 1;
+        }
+
+    /* add appropriate colors to fb, twitter and google buttons */
+    .fb {
+        background-color: #3B5998;
+        color: white;
+    }
+
+    .twitter {
+        background-color: #55ACEE;
+        color: white;
+    }
+
+    .google {
+        background-color: #dd4b39;
+        color: white;
+    }
+
+    /* style the submit button */
+    input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    /* Two-column layout */
+    .col {
+        float: left;
+        width: 50%;
+        margin: auto;
+        padding: 0 50px;
+        margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* vertical line */
+    .vl {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        border: 2px solid #ddd;
+        height: 175px;
+    }
+
+    /* text inside the vertical line */
+
+    /* hide some text on medium and large screens */
+    .hide-md-lg {
+        display: none;
+    }
+
+    /* bottom container */
+
+
+    /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+    @@media screen and (max-width: 650px) {
+        .col {
+            width: 100%;
+            margin-top: 0;
+        }
+        /* hide the vertical line */
+        .vl {
+            display: none;
+        }
+        /* show the hidden text on small screens */
+        .hide-md-lg {
+            display: block;
+            text-align: center;
+        }
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <br/>
+    <div class="col-md-12">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="panel panel-default ">
+                <div class="panel-heading headingcolor">
+
+                    @Html.Label("LOGIN")
+                  
+
+                </div>
+                <div class="panel-body bagraoung">
+
+                 
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.lid, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.lid, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.lid, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Passward, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Passward, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Passward, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Login" class="btn btn-default" style="width: 30%;" />
+                            @Html.ActionLink("New Registration", "Registration")
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+                }
+
+                @*<div>
+                    @Html.ActionLink("Back to List", "Index") | @Html.ActionLink("Signup", "Registration")
+                </div>*@
+
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }

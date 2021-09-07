@@ -1,0 +1,94 @@
+﻿@model IEnumerable<SunDiagonostics.Models.PatientInfoModel>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default ">
+    <div class="panel-heading headingcolor">
+        <h4>Dashboard</h4>
+    </div>
+</div>
+<script>
+    function redirectToPatienetRegistration() {
+
+        window.location = "http://localhost:54429/Doc/PatientInfo";
+    }
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="col-md-12">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="panel panel-default ">
+            <div class="panel-heading headingcolor">
+
+                @Html.Label("Search Existing Patient")
+
+
+            </div>
+            <div class="panel-body bagraoung">
+
+                <div class="form-group">
+                    @Html.Label("Name/Mobile", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-6" style="margin-bottom:3px">
+                        @Html.TextBox("Name_Mobile", null, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessage("NameOrMobile", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-6">
+                        <input type="submit" class="btn btn-success" value="Search" name="Dashboard" class="btn btn-default" />
+                        @Html.ActionLink("New Registration", "PatientInfo")
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+}
+
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>
+            Patient Name
+        </th>
+        <th>
+            Mobile Number
+        </th>
+        <th>
+            Date
+        </th>
+        <th> Action </th>
+
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.pname
+                </td>
+                <td>
+                    @item.mobileNo
+                </td>
+                <td>
+                    @item.CreatedOn
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" href="~/Doc/GetAllReportsByPatientId?Pid=@item.pid">View Reports</a>  
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+

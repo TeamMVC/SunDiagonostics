@@ -1,0 +1,108 @@
+﻿@model List<SunDiagonostics.Models.ComputerBloodPictureReportModel>
+
+@{
+    ViewBag.Title = "ComputerBloodPictureReportList";
+    Layout = null;
+}
+
+<h2>Computer Blood Picture Report List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>
+            Cbpid
+        </th>
+        <th>
+            Pid
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Gaemoglobin
+        </th>
+        <th>
+            Erythrocyte Count
+        </th>
+        <th>
+            Total WBC Count
+        </th>
+        <th>
+            Neutrophils
+        </th>
+        <th>
+            Lymphocytes
+        </th>
+        <th>
+            Eosinophils
+        </th>
+        <th>
+            Monocytes
+        </th>
+        <th>
+            Basophils
+        </th>
+        <th>
+            Rbcs
+        </th>
+        <th>
+            Platelet Count
+        </th>
+        <th> Action </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.cbpid
+        </td>
+        <td>
+            @item.pid
+        </td>
+        <td>
+            @item.date
+        </td>
+        <td>
+            @item.haemoglobin
+        </td>
+        <td>
+            @item.erythrocyteCount
+        </td>
+        <td>
+            @item.totalWBCCount
+        </td>
+        <td>
+            @item.neutrophils
+        </td>
+        <td>
+            @item.lymphocytes
+        </td>
+        <td>
+            @item.eosinophils
+        </td>
+        <td>
+            @item.monocytes
+        </td>
+        <td>
+            @item.basophils
+        </td>
+        <td>
+            @item.rbcs
+        </td>
+        <td>
+            @item.plateletCount
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

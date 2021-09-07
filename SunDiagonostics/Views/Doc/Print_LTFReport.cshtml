@@ -1,0 +1,312 @@
+﻿@model SunDiagonostics.Models.ClinicalBiochemistoryReportLTFModel
+@{
+    ViewBag.Title = "Print_LTFReport";
+}
+<style>
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    .table > tbody > label > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+        font-size: 16px !important;
+    }
+
+    label {
+        font-size: 16px !important;
+    }
+</style>
+<div>
+    <div class="container">
+        <table width="100%" height="20%">
+            <tr>
+                <td>
+                    <img src="~/Akbar.png" width="200" height="90">
+                </td>
+                <td>
+                    @Html.Label(Model.Specilization, new { style = "color:red !important" })<br />
+                    @Html.Label(Model.DoctorName, new { style = "color:cadetblue !important" })  <br />
+                    @Html.Label(Model.Qualification, new { style = "color:cadetblue !important" })  <br />
+                </td>
+                <td>
+                    @Html.Label(Model.Specilization, new { style = "color:red !important" })<br />
+                    @Html.Label(Model.DoctorName, new { style = "color:cadetblue !important" })  <br />
+                    @Html.Label(Model.Qualification, new { style = "color:cadetblue !important" })  <br />
+
+                </td>
+            </tr>
+        </table>
+        <h2></h2>
+        <table style="border-collapse: collapse; border-spacing: 0 15px; border: double" width="90%" align="center" cellspacing=1 cellpadding=1>
+            <tr style="border: double; border-width: 1px 0;">
+                <td>
+                    @Html.Label("Sr No :- ", new { style = "color:Black; text-decoration:underline; " })
+                    @Html.Label(Model.Srno.ToString(), new { style = "color:Black; font-weight: normal;" })
+                </td>
+                <td>
+                    @Html.Label("Date:-", new { style = "color:Black ; text-decoration:underline;" })
+                    @DateTime.Now
+                </td>
+            </tr>
+            <tr style="border: double; border-width: 1px 0;">
+                <td><h2></h2></td>
+                <td>
+                </td>
+            </tr>
+            <tr style="border: double; border-width: 1px 0;">
+                <td>
+                    @Html.Label("Pt. Name :- ", new { style = "color:Black ; text-decoration:underline;" })
+                    @Html.Label(Model.Pname, new { style = "color:Black; font-weight: normal;" })
+                </td>
+                <td>
+                    @Html.Label("Age :-", new { style = "color:Black ; text-decoration:underline;" })
+                    @Html.Label(Model.Age.ToString(), new { style = "color:Black; font-weight: normal;" })
+                </td>
+            </tr>
+            <tr style="border: double; border-width: 1px 0;">
+                <td><h2></h2></td>
+                <td>
+                </td>
+            </tr>
+            <tr style="border:double; border-width: 1px 0;">
+                <td>
+                    @Html.Label("Ref. By DR :-", new { style = "color:Black ; text-decoration:underline; " })
+                    @Html.Label(Model.RefByDoc, new { style = "color:Black; font-weight: normal;" })
+                </td>
+                <td>
+                    @Html.Label("Gender :-", new { style = "color:Black ; text-decoration:underline;" })
+                    @Html.Label(Model.Gender, new { style = "color:Black; font-weight: normal;" })
+                </td>
+            </tr>
+        </table>
+        <hr style="position: relative; border: none; top: 5px; height: 2px; background: black !important; margin-bottom: 5px; " />
+        <table width="100%" height="10%">
+            <tr>
+                <td align="center">
+                    @Html.Label("CLINICAL BIOCHEMISTORY REPORT LIVER FUNCTION TEST {LTF} ", new { style = "color:Black; text-decoration:underline; " })
+                </td>
+            </tr>
+        </table>
+        <hr style="position: relative; border: none; top: 1px; height: 2px; background: black !important; margin-top: 1px; " />
+
+        <table width="100%" style="margin-left:6%;">
+            <tr>
+                <td>
+                    @Html.Label("Test Description ", new { style = "color:Black; text-decoration:underline; " })
+                </td>
+                <td>
+                    @Html.Label("Value Observed ", new { style = "color:Black; text-decoration:underline; " })
+                </td>
+                <td>
+                    @Html.Label("Biological Reference Interval ", new { style = "color:Black; text-decoration:underline; " })
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    @Html.Label("Serum Bilirubin (T)", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumBilirubin gm/dl</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">Adults : 0.2-1.0 mg/dl</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">New Born : 1.0-12.0 mg/dl</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Serum Bilirubin (D)", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumBilirubinD mg/dl</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">00-0.3 mg/dl</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">Serum Bilirubin ID</label>
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumBilirubinID mg/dl</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">0.2-0.8 mg/dl </label>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    @Html.Label("Serum Asparate Amino Transferase (SGOT)", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumAsparateAminoTransferase IU/L</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">5-40 IU/L</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.Label("Serum Alanine Amino Transferase SGPT", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumAlanineAminoTransferase IU/L</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">5-40 IU/L</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.Label("Serum Total Protein", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumTotalProtein %</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">6.0-8.0 mg% </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Serum Albumin", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumAlbumin %</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">3.7-5.3 gm </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Serum Glubulin", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumGlubulin %</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">2.3-3.6 gm% </label>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    @Html.Label("AGRation", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.AGRation IU/L</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">1.0-2.3</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Serum Alkaline Phosphatse", new { style = "color:Black; font-weight: normal; font-size:smaller;" })
+                </td>
+                <td>
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">@Model.serumAlkalinePhosphatse IU/L</label>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">Upto 17 yrs : 500 IU/L</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">Male : 50-126 IU/L</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">Female : 37-103 IU/L</label>
+                </td>
+            </tr>
+
+        </table>
+        <table width="100%">
+
+            <tr>
+                <td width="40%" align="center">
+                    <label style="color: Black; font-weight: normal; font-size: smaller; "><b><u>Methodology </u> :-</b> Electronic Cell Counter & Microscopy.</label>
+                </td>
+                <td width="40%">
+                    <label style="color: Black; font-weight: normal; font-size: smaller; "></label>
+                </td>
+
+                <td align="left" width="20%"></td>
+
+            </tr>
+            <tr>
+                <td width="40%" align="center">
+                    <label style="color: Black; font-weight: normal; "></label>
+
+                </td>
+                <td width="40%">
+                    <label style="color: Black; font-weight: normal; ">(Signature)</label>
+                </td>
+                <td align="left" width="20%">
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">@Model.DoctorName</label><br />
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">@Model.Qualification</label><br />
+                    <label style="color: Black; font-weight: normal; font-size: smaller;">@Model.Specilization</label>
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%">
+
+            <tr>
+                <td align="center">
+                    <label style="color:Black; font-weight: normal; font-size:smaller;">(Suggest Clinical Correction if there is need kindly discuss)</label>
+                </td>
+            </tr>
+
+        </table>
+        <div style="width: 100%; min-height: 100px; margin: 0 auto; display: -webkit-flex; display: flex; -webkit-print-color-adjust: exact;">
+
+            <div style="padding: 10px; background: cadetblue !important; color: white; width: 80% ">
+                <p style="text-align:center">Terms & Conditions</p>
+                @Model.descriptions
+            </div>
+            <div style="padding: 5px; background: coral !important; color: white; width: 20% ">
+                <p style="text-align:center">
+                    ADDRESS:
+                </p>
+                @Model.fullAddress
+            </div>
+
+        </div>
+    </div>
+</div>

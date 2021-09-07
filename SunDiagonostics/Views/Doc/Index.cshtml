@@ -1,0 +1,59 @@
+﻿@model SunDiagonostics.Models.ReportModel
+
+    <script>
+        function ChangeReportType() {
+
+            if ($('#ReportType').val() == 1) {
+                window.location = "http://localhost:54429/Doc/ClinicalBiochemistoryReportLIPIDProfile";
+            }
+            else if ($('#ReportType').val() == 2) {
+                window.location = "http://localhost:54429/Doc/ClinicalBiochemistoryReportLTF";
+
+            }
+            else if ($('#ReportType').val() == 3) {
+                window.location = "http://localhost:54429/Doc/ComputerBloodPictureReport";
+
+            }
+            else {
+                return null;
+            }
+        }
+    </script>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <form class="form-control">
+            <div class="form-group">
+
+                <hr />
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ReportType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.ValidationMessageFor(model => model.ReportType, "", new { @class = "text-danger" })
+                        @Html.DropDownList("ReportType", null, "Select Report", htmlAttributes: new { @class = "control-label col-md-4" })
+
+                    </div>
+                </div>
+
+
+                <div class="btn-group-justified">
+                    <div class="col-md-offset-2 col-md-4">
+                        <input type="button" value="Create Test" class="btn btn-default" onclick="ChangeReportType();" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
