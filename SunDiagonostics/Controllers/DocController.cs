@@ -11,7 +11,7 @@ using System.Web.Security;
 using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.HtmlConverter;
 using ceTe.DynamicPDF.Printing;
-
+using System.Web.Hosting;
 
 namespace SunDiagonostics.Controllers
 {
@@ -366,11 +366,12 @@ namespace SunDiagonostics.Controllers
             try
             {
                 ConversionOptions options = new ConversionOptions(ceTe.DynamicPDF.HtmlConverter.PageSize.A4, ceTe.DynamicPDF.HtmlConverter.PageOrientation.Portrait, 0.2f);
-                 Converter.Convert(new Uri("https://localhost:44319/Doc/Print_LIPIDProfileReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), @"D:\WithConversionOptions.pdf", options);
+                string path = HostingEnvironment.MapPath("~/Upload");
+                Converter.Convert(new Uri("https://localhost:44319/Doc/Print_LIPIDProfileReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), path + @"\WithConversionOptions.pdf", options);
                // Converter.Convert(new Uri(@"akbardiagnostic.dswebcare.com/Doc/Print_LIPIDProfileReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), @"D:\WithConversionOptions.pdf", options);
 
                 //Converter.Convert(new Uri("https://en.wikipedia.org"), "E:\\SimpleConversion.pdf");
-                ceTe.DynamicPDF.Printing.PrintJob printJob = new PrintJob(rept.Printer_Name.ToString(), "D:\\WithConversionOptions.pdf");
+                ceTe.DynamicPDF.Printing.PrintJob printJob = new PrintJob(rept.Printer_Name.ToString(), path + @"\WithConversionOptions.pdf");
                 printJob.Print();
                 return Content("PDF Generated");
             }
@@ -386,12 +387,13 @@ namespace SunDiagonostics.Controllers
             try
             {
                 ConversionOptions options = new ConversionOptions(ceTe.DynamicPDF.HtmlConverter.PageSize.A4, ceTe.DynamicPDF.HtmlConverter.PageOrientation.Portrait, 0.2f);
-                Converter.Convert(new Uri("https://localhost:44319/Doc/Print_LTFReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), @"D:\WithConversionOptions.pdf", options);
+                string path = HostingEnvironment.MapPath("~/Upload");
+                Converter.Convert(new Uri("https://localhost:44319/Doc/Print_LTFReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), path + @"\WithConversionOptions.pdf", options);
 
                 // Converter.Convert(new Uri(@"akbardiagnostic.dswebcare.com/Doc/Print_LTFReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), @"E:\WithConversionOptions.pdf", options);
 
                 //Converter.Convert(new Uri("https://en.wikipedia.org"), "E:\\SimpleConversion.pdf");
-                ceTe.DynamicPDF.Printing.PrintJob printJob = new PrintJob(rept.Printer_Name.ToString(), "D:\\WithConversionOptions.pdf");
+                ceTe.DynamicPDF.Printing.PrintJob printJob = new PrintJob(rept.Printer_Name.ToString(), path + @"\WithConversionOptions.pdf");
                 printJob.Print();
                 return Content("PDF Generated");
             }
@@ -407,10 +409,11 @@ namespace SunDiagonostics.Controllers
             try
             {
                 ConversionOptions options = new ConversionOptions(ceTe.DynamicPDF.HtmlConverter.PageSize.A4, ceTe.DynamicPDF.HtmlConverter.PageOrientation.Portrait, 0.2f);
-                Converter.Convert(new Uri("https://localhost:44319/Doc/Print_LTFReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), @"D:\WithConversionOptions.pdf", options);
+                string path = HostingEnvironment.MapPath("~/Upload");
+                Converter.Convert(new Uri("https://localhost:44319/Doc/Print_LTFReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), path + @"\WithConversionOptions.pdf", options);
                 // Converter.Convert(new Uri(@"akbardiagnostic.dswebcare.com/Doc/Print_CBPReport?Pid=" + rept.Pid + "&ReportTypeId=" + rept.ReportTypeId + "&ReportId=" + rept.ReportId + ""), @"D:\WithConversionOptions.pdf", options);
                 //Converter.Convert(new Uri("https://en.wikipedia.org"), "E:\\SimpleConversion.pdf");
-                ceTe.DynamicPDF.Printing.PrintJob printJob = new PrintJob(rept.Printer_Name.ToString(), "D:\\WithConversionOptions.pdf");
+                ceTe.DynamicPDF.Printing.PrintJob printJob = new PrintJob(rept.Printer_Name.ToString(), path + @"\WithConversionOptions.pdf");
                 printJob.Print();
                 return Content("PDF Generated");
             }
